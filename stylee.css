@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --accent-color: #8672ff;
+    --base-color: white;
+    --text-color: #2E2B41;
+    --input-color: #F3F0FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Merriweather", serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+    min-height: 100vh;
+    background: url(/imagess/bacckground.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: var(--base-color);
+    width: max(40%, 600px);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+form {
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form input {
+    flex-grow: 1;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--input-color);
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+form input:focus {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(134, 114, 255, 0.4);
+}
+
+div:has(input:focus) > label {
+    background-color: var(--text-color);
+}
+
+form input::placeholder {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+form button {
+    margin-top: 15px;
+    border: none;
+    border-radius: 1000px;
+    padding: 0.85em 4em;
+    background-color: var(--accent-color);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(134, 114, 255, 0.3);
+}
+
+form button:hover,
+form button:focus {
+    background-color: var(--text-color);
+    box-shadow: 0px 5px 20px rgba(46, 43, 65, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--text-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 1100px){
+    .wrapper{
+        width:min(600px, 100%);
+        border-radius: 0;
+    }
+}
+form div.incorrect label{
+    background-color: #f06272;
+}
+form div.incorrect input{
+    border-color: #f06272;
+}
